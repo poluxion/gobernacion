@@ -162,6 +162,5 @@ function myFunction($a, $b){
 
 echo "la suma de 6 + 4 = ". myFunction(6,4);
     ?>
-    pablo Andres
 </body>
 </html>
