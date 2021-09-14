@@ -18,7 +18,8 @@ $listaUsers=$crud->mostrar();
     <title>Lista de Usuarios</title>
 </head>
 <body>
-	<table class="table table-dark">
+    <div class="container" style="margin-top: 30px;">
+	<table class="table table-dark table-striped">
   <thead>
   			<td>usuario</td>
 			<td>nombre</td>
@@ -27,19 +28,21 @@ $listaUsers=$crud->mostrar();
             <td>password</td>
             <td>Telefono</td>
             <td>Correo</td>
+            <td>Actualizar</td>
+            <td>Eliminar</td>
   </thead>
   <tbody>
   <?php foreach ($listaUsers as $usuario) {?>
     <tr>
-				<td><?php echo $usuario->getUsuario() ?></td>
-				<td><?php echo $usuario->getNombre() ?></td>
-				<td><?php echo $usuario->getApellido()?> </td>
-                <td><?php echo $usuario->getCedula()?> </td>
-                <td><?php echo $usuario->getPassword()?> </td>
-                <td><?php echo $usuario->getTelefono()?> </td>
-                <td><?php echo $usuario->getCorreo()?> </td>
-				<td><a href="actualizar.php?id=<?php echo $usuario->getID()?>&accion=a">Actualizar</a></td>
-				<td><a href="administrarUsuario.php?id=<?php echo $usuario->getID()?>&accion=e">Eliminar</a></td>
+		<td><?php echo $usuario->getUsuario() ?></td>
+		<td><?php echo $usuario->getNombre() ?></td>
+		<td><?php echo $usuario->getApellido()?> </td>
+        <td><?php echo $usuario->getCedula()?> </td>
+        <td><?php echo $usuario->getPassword()?> </td>
+        <td><?php echo $usuario->getTelefono()?> </td>
+        <td><?php echo $usuario->getCorreo()?> </td>
+		<td><a href="actualizar.php?id=<?php echo $usuario->getID()?>&accion=a">Actualizar</a></td>
+		<td><a href="administrarUsuario.php?id=<?php echo $usuario->getID()?>&accion=e">Eliminar</a></td>
     </tr>
 	<?php }?>
   </tbody>
@@ -47,5 +50,6 @@ $listaUsers=$crud->mostrar();
 <center>
 <button type="button" class="btn btn-danger"><a class="letterBtn" href="index.php">Volver</a></button>
 </center>
+</div>
 </body>
 </html>
