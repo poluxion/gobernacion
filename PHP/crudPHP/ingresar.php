@@ -40,7 +40,7 @@
   </div>
   <div class="col-12">
     <label for="correo" class="form-label">Correo: </label>
-    <input type="email" class="form-control" name="correo" required>
+    <input type="email" class="form-control" name="correo" style="margin-bottom: 28px;" required>
   </div>
   <input type="hidden" name='insertar' value='insertar'>
   <center>
