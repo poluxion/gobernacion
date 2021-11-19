@@ -37,12 +37,12 @@ $routes->get('/ingresar', 'viewsController::ingresar');
 $routes->get('/mostrar', 'viewsController::mostrar', ['filter'=>'sessionAdmin']);
 $routes->get('/obtenerNombre/(:any)', 'viewsController::obtenerNombre/$1');
 $routes->get('/eliminar/(:any)', 'viewsController::eliminar/$1');
-$routes->post('/administrarUsuario', 'viewsController::administrarUsuario');
 $routes->post('/actualizar', 'viewsController::actualizar');
 $routes->get('/administrarUsuario', 'viewsController::administrarUsuario');
 $routes->get('/crudUsuario', 'viewsController::crudUsuario');
 $routes->post('/login', 'viewsController::login');
 $routes->get('/userLogin', 'viewsController::userLogin');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
