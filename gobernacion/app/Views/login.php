@@ -7,7 +7,7 @@
           </center>
           <form action="<?php echo base_url(); ?>/mainControllers/login" method="POST" style="background-color: #E5E7E9;">
             <label class="usuario" for= "usuario" > Usuario:</label>
-            <input type="text" name="usuario" class="form-control" placeholder="juanita" required>
+            <input type="text" name="usuario" class="form-control" placeholder="juanita" required autocomplete="off">
             <label for="password">Password:</label>
             <input type="password" name="password" placeholder="juanita123" class="form-control" required>
             <br>
