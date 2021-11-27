@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\Usuarios;
+use App\Models\Reportes;
+use App\Models\Frecuencia;
+use App\Models\Movimiento;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class mainControllers extends BaseController
@@ -10,6 +13,9 @@ class mainControllers extends BaseController
     public function __construct()
     {
         $this->usuario = new Usuarios;
+        $this->reporte = new Reportes;
+        $this->frecuencia = new Frecuencia;
+        $this->movimiento = new Movimiento;
     }
 
     public function index()
@@ -17,9 +23,9 @@ class mainControllers extends BaseController
         $model = new Usuarios();
         $dat = $model->mostrarData();
         $data['data'] = $dat;
-        echo view('templates/header',$data);
-        echo view('templates/footer',$data);
-        echo view('index',$data);
+        echo view('templates/header', $data);
+        echo view('templates/footer', $data);
+        echo view('index', $data);
     }
 
     public function registerUser()
@@ -78,12 +84,11 @@ class mainControllers extends BaseController
             var_dump($_SESSION); {
                 if ($_SESSION['tipo'] === "Admin") {
                     return redirect()->to(base_url('tableUser'));
-                } else  {
+                } else {
                     return redirect()->to(base_url('/'));
-                } 
+                }
             }
-        } else 
-        {
+        } else {
             return redirect()->to(base_url('userLogin'))->with('message', 'Sin cuenta registrada.');
         }
     }
@@ -123,8 +128,8 @@ class mainControllers extends BaseController
         $data = ["ID" => $ID];
         $usuario = new Usuarios();
         $respuesta = $usuario->obtenerNombre($data);
-        $daticos["datos" ] =  $respuesta;
-        
+        $daticos["datos"] =  $respuesta;
+
 
         echo view('templates/header', $daticos);
         echo view('templates/footer', $daticos);
@@ -172,10 +177,10 @@ class mainControllers extends BaseController
 
         if ($usuario->find($ID) == NULL) {
             throw PageNotFoundException::forPageNotFound();
-        }  
-            $usuario->where('ID', $ID);
-            $usuario->delete($ID);
-            return redirect()->to('/tableUser')->with('message', 'Usuario eliminado con éxito.');
+        }
+        $usuario->where('ID', $ID);
+        $usuario->delete($ID);
+        return redirect()->to('/tableUser')->with('message', 'Usuario eliminado con éxito.');
     }
 
     public function salir()
@@ -183,5 +188,84 @@ class mainControllers extends BaseController
         $session = session();
         $session->destroy();
         return redirect()->to(base_url('/'));
+    }
+
+    ///////////////////////
+
+    public function crearReporte()
+    {
+        $frecuence = new Frecuencia();
+        $dat = $frecuence->mostrarFrecuencias();
+        $data['datos'] = $dat;
+        echo view('templates/header', $data);
+        echo view('templates/footer', $data);
+        return view('crearReporte', $data);
+    }
+
+    /*
+    public function crearReport()
+    {
+        $reporte = new Reportes();
+        $fechaActual = date ('d-m-Y H:i:s');
+        $data =
+            [
+                "nombreReportes" => $_POST['nombreReportes'],
+                "frecuencia" => $_POST['frecuencia'],
+            ];
+        
+            $this->db->insert('table_name',$data);
+            $id = $this->db->mysql_insert_id();
+        
+        return redirect()->to(base_url() . "/");
+    }
+    */
+
+    public function crearReport()
+    {
+       $db = db_connect('default');
+       $builder = $db->table('reportes');
+       $builder2 = $db->table('movimiento');
+       $fechaActual = date ('Y-m-d h:i:s', time());
+        
+       
+       $data =
+            [
+                "nombreReportes" => $_POST['nombreReportes'],
+                "frecuencia" => $_POST['frecuencia'],
+            ];
+            $builder->insert($data);
+            $id = $db->insertID();
+            $datos = [
+                    "reporte" =>$id,
+                    "fecha" => $fechaActual
+                    ];
+            $builder2->insert($datos);
+            return redirect()->to(base_url() . "/");
+    }
+
+    public function reportList()
+    {
+
+    }
+
+    /////////////////////////////////////
+
+    public function crearFrecuencias()
+    {
+        echo view('templates/header');
+        echo view('templates/footer');
+        return view('crearFrecuencias');
+    }
+
+    public function crearFrecuence()
+    {
+        $Frecuencia = new Frecuencia();
+        $data =
+            [
+                "nombreFrecuencia" => $_POST['nombreFrecuencia'],
+                "dias" => $_POST['dias'],
+            ];
+        $ingreso = $this->frecuencia->insert($data);
+        return redirect()->to(base_url() . "/");
     }
 }

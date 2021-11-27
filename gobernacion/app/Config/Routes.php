@@ -35,6 +35,8 @@ $routes->get('/', 'mainControllers::index');
 $routes->get('login', 'mainControllers::login');
 $routes->get('userLogin', 'mainControllers::userLogin');
 $routes->get('registerUser', 'mainControllers::registerUser');
+$routes->get('crearReporte', 'mainControllers::crearReporte'); 
+$routes->get('crearFrecuencias', 'mainControllers::crearFrecuencias'); 
 $routes->get('tableUser', 'mainControllers::tableUser');
 $routes->get('/obtenerUser/(:any)', 'mainControllers::obtenerUser/$1');
 $routes->get('/obtenerUser', 'mainControllers::obtenerUser');
@@ -42,6 +44,9 @@ $routes->get('/obtenerUsuario', 'mainControllers::obtenerUsuario');
 $routes->get('/eliminar/(:any)', 'mainController::eliminar/$1');
 $routes->get('/editUser', 'mainControllers::editUser');
 $routes->post('registerUser', 'mainControllers::registerUser');
+$routes->post('/crearReporte', 'mainControllers::crearReporte'); 
+$routes->post('/crearFrecuencia', 'mainControllers::crearFrecuencia'); 
+
 
 /*
  * --------------------------------------------------------------------
