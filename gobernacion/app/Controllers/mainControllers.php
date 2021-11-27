@@ -202,24 +202,6 @@ class mainControllers extends BaseController
         return view('crearReporte', $data);
     }
 
-    /*
-    public function crearReport()
-    {
-        $reporte = new Reportes();
-        $fechaActual = date ('d-m-Y H:i:s');
-        $data =
-            [
-                "nombreReportes" => $_POST['nombreReportes'],
-                "frecuencia" => $_POST['frecuencia'],
-            ];
-        
-            $this->db->insert('table_name',$data);
-            $id = $this->db->mysql_insert_id();
-        
-        return redirect()->to(base_url() . "/");
-    }
-    */
-
     public function crearReport()
     {
        $db = db_connect('default');
