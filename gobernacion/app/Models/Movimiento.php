@@ -41,7 +41,7 @@ class Movimiento extends Model
     {
         $nombres = $this->db->table('movimiento');
         $nombres->set($data);
-        $nombres->where('ID', $ID);
+        $nombres->where('idMovimiento', $ID);
         return $nombres->update();
     }
 

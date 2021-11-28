@@ -37,15 +37,27 @@ $routes->get('userLogin', 'mainControllers::userLogin');
 $routes->get('registerUser', 'mainControllers::registerUser');
 $routes->get('crearReporte', 'mainControllers::crearReporte'); 
 $routes->get('crearFrecuencias', 'mainControllers::crearFrecuencias'); 
+$routes->get('crearDiaNoHabil', 'mainControllers::crearDiaNoHabil'); 
 $routes->get('tableUser', 'mainControllers::tableUser');
 $routes->get('/obtenerUser/(:any)', 'mainControllers::obtenerUser/$1');
+$routes->get('/obtenerReporte/(:any)', 'mainControllers::obtenerReporte/$1');
+$routes->get('/obtenerFrecuencia/(:any)', 'mainControllers::obtenerFrecuencia/$1');
+$routes->get('/obtenerFrecuencia', 'mainControllers::obtenerFrecuencia');
 $routes->get('/obtenerUser', 'mainControllers::obtenerUser');
+$routes->get('/obtenerDiaNoHabil', 'mainControllers::obtenerDiaNoHabil');
+$routes->get('/obtenerDiaNoHabil/(:any)', 'mainControllers::obtenerDiaNoHabil/$1');
+$routes->get('reportList', 'mainControllers::reportList'); 
+$routes->get('frecuenceList', 'mainControllers::frecuenceList'); 
+$routes->get('noHabilesList', 'mainControllers::noHabilesList'); 
 $routes->get('/obtenerUsuario', 'mainControllers::obtenerUsuario');
 $routes->get('/eliminar/(:any)', 'mainController::eliminar/$1');
 $routes->get('/editUser', 'mainControllers::editUser');
+$routes->get('/editReport', 'mainControllers::editReport');
+$routes->get('/editFrecuence', 'mainControllers::editFrecuence');
 $routes->post('registerUser', 'mainControllers::registerUser');
 $routes->post('/crearReporte', 'mainControllers::crearReporte'); 
 $routes->post('/crearFrecuencia', 'mainControllers::crearFrecuencia'); 
+$routes->post('/crearDiaNoHabil', 'mainControllers::crearDiaNoHabil'); 
 
 
 /*

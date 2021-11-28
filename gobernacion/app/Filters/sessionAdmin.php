@@ -11,7 +11,7 @@ class sessionAdmin implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         
-        if(session()->get('tipo') <> 'Admin') 
+        if(session()->get('tipo') <> 'Admin' && session()->get('tipo') <> 'Usuario') 
         {
             return redirect()->to(base_url('/'));
         }

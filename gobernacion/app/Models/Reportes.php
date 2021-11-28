@@ -41,11 +41,11 @@ class Reportes extends Model
         return $nombres->get()->getResultArray();
     }
 
-    public function actualizarReportes($data, $ID)
+    public function actualizarReportes($data, $idReportes)
     {
         $nombres = $this->db->table('reportes');
         $nombres->set($data);
-        $nombres->where('ID', $ID);
+        $nombres->where('idReportes', $idReportes);
         return $nombres->update();
     }
 

@@ -18,7 +18,7 @@
   <center>
   <div class="col-12">
   <input type="submit" class="btn btn-success" value='Guardar'>
-  <a href="<?php echo base_url(); ?>/" class="btn btn-danger">Volver</a>
+  <a href="<?php echo base_url(); ?>/frecuenceList" class="btn btn-danger">Volver</a>
   </div> 
   </center>
 

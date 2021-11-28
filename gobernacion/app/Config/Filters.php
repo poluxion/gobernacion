@@ -60,6 +60,6 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        "sessionAdmin"=> ["before"=> ["tableUser", "editUser",]],
+        "sessionAdmin"=> ["before"=> ["tableUser", "editUser","crearDiaNoHabil","crearFrecuencias","crearReporte","editReport","frecuenceList","reportList",]],
     ];
 }

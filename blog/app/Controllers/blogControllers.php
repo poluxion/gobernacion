@@ -161,7 +161,6 @@ class blogControllers extends BaseController
     }
 
     public function obtenerName($ID){
-        //helper('convert');
         $data = $ID;
         $usuario = new Usuarios();
         $respuesta = $usuario->obtenerNombre($data);

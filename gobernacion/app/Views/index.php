@@ -16,7 +16,7 @@
                 <div class="container">
                     <center style="border: gray 2px solid; margin-top: 10px;">
                         <p>Ingresa aquí para todo lo relacionado con reportes</p>
-                        <a href="<?php echo base_url() . '/crearReporte'  ?>" class="btn btn-primary">Reportes</a>
+                        <a href="<?php echo base_url() . '/reportList'  ?>" class="btn btn-primary">Reportes</a>
                 </div>
             </div>
         </div>
@@ -26,8 +26,19 @@
             <div class="col">
                 <div class="container">
                     <center style="border: gray 2px solid; margin-top: 10px;">
-                        <p>Ingresa aquí para crear una frecuencia</p>
-                        <a href="<?php echo base_url() . '/crearFrecuencias'  ?>" class="btn btn-primary">Frecuencias</a>
+                        <p>Ingresa aquí para todo lo relacionado con frecuencia</p>
+                        <a href="<?php echo base_url() . '/frecuenceList'  ?>" class="btn btn-primary">Frecuencias</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <center style="border: gray 2px solid; margin-top: 10px;">
+                        <p>Ingresa aquí para todo lo relacionado con dias no habiles</p>
+                        <a href="<?php echo base_url() . '/noHabilesList'  ?>" class="btn btn-primary">Días No Hábiles</a>
                 </div>
             </div>
         </div>

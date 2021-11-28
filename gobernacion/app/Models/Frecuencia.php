@@ -41,7 +41,7 @@ class Frecuencia extends Model
     {
         $nombres = $this->db->table('frecuencia');
         $nombres->set($data);
-        $nombres->where('ID', $ID);
+        $nombres->where('idFrecuencia', $ID);
         return $nombres->update();
     }
 
