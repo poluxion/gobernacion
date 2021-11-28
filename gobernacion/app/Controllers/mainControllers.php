@@ -20,6 +20,8 @@ class mainControllers extends BaseController
         $this->noHabil = new NoHabil;
     }
 
+    //////////USUARIOS Y GENERAL//////////////////
+
     public function index()
     {
         $model = new Usuarios();
@@ -192,7 +194,7 @@ class mainControllers extends BaseController
         return redirect()->to(base_url('/'));
     }
 
-    ///////////////////////
+    ///////////REPORTES////////////
 
     public function crearReporte()
     {
@@ -300,7 +302,7 @@ class mainControllers extends BaseController
 
 
 
-    /////////////////////////////////////
+    /////////////////FRECUENCIAS////////////////////
 
     public function crearFrecuencias()
     {
@@ -379,7 +381,7 @@ class mainControllers extends BaseController
         return redirect()->to('/frecuenceList')->with('message', 'Frecuencia eliminado/a con éxito.');
     }
 
-    //////////////////////////////////////
+    ///////DIAS NO HABILES //////////////////
 
     public function crearDiaNoHabil()
     {
